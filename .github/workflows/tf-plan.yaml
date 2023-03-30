@@ -1,0 +1,25 @@
+name: KyberCorp TF
+
+on:
+  pull_request:
+
+jobs:
+  shared-validate:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: validate shared TF code
+        run: |
+          cd terraform/shared
+          terraform init
+          terraform validate
+
+  shared-plan:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: plan shared TF code
+        run: |
+          cd terraform/shared
+          terraform init
+          terraform plan

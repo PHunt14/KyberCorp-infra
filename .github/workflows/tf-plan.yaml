@@ -8,6 +8,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - uses: actions/checkout@v3
+
       - name: validate shared TF code
         run: |
           cd terraform/shared
@@ -17,6 +19,8 @@ jobs:
   shared-plan:
     runs-on: ubuntu-latest
     steps:
+
+      - uses: actions/checkout@v3
 
       - name: plan shared TF code
         run: |
